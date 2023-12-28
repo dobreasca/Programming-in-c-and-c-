@@ -1,0 +1,20 @@
+CC=gcc
+CFLAGS=-Wall
+OBJ=use_linked_list.o linked_list.o
+
+all: use_linked_list
+
+use_linked_list:$(OBJ)
+				$(CC) $(CFLAGS) -o use_linked-list $(OBJ)
+#we first compile our files
+				
+use_linked_list.o: linked_list.h use_linked_list.c
+linked_list.o: linked_list.h linked_list.c
+
+clean_objects:
+	rm -f use_linked_list *.o
+#we delete the object files
+
+clean_exe:
+	rm -f use_linked-list.exe
+#we delete the executable
